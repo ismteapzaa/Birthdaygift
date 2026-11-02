@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Birthday Gift Made Just For You 🎂</title>
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600&family=Noto+Sans+Thai:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fff7f4; --card:#fffdfb; --pink:#fbd3dc; --rose:#e98aa0; --rose-d:#c25a77; --blue:#cfe6f5; --blue-d:#5b93b8;
+  --cream:#fdeedb; --ink:#5b3d47; --soft:#8c6b75; --shadow:0 8px 24px rgba(194,90,119,.15);
+  --font-h:'Mali','Noto Sans Thai',cursive; --font-b:'Noto Sans Thai',system-ui,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#2b1d23;--card:#3a2830;--pink:#5a3541;--rose:#f0a0b4;--rose-d:#f5b6c5;--blue:#33485a;--blue-d:#a9d0ea;--cream:#4a3a35;--ink:#fbe9ee;--soft:#d3b3bd;--shadow:0 8px 24px rgba(0,0,0,.35)}}
+:root[data-theme="dark"]{--bg:#2b1d23;--card:#3a2830;--pink:#5a3541;--rose:#f0a0b4;--rose-d:#f5b6c5;--blue:#33485a;--blue-d:#a9d0ea;--cream:#4a3a35;--ink:#fbe9ee;--soft:#d3b3bd;--shadow:0 8px 24px rgba(0,0,0,.35)}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:var(--font-b);line-height:1.75;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+h1,h2,h3{font-family:var(--font-h);margin:0 0 .5rem;line-height:1.3}
+h1{font-size:clamp(1.9rem,8.5vw,3.2rem)} h2{font-size:1.7rem;text-align:center;color:var(--rose-d)}
+p{margin:.4rem 0} button{font:inherit;cursor:pointer;color:inherit}
+:focus-visible{outline:3px solid var(--blue-d);outline-offset:3px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;display:flex;justify-content:space-between;align-items:center;
+  padding:.6rem 1rem;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px)}
+.brand{font-family:var(--font-h);font-weight:600;color:var(--rose-d);text-decoration:none}
+.menu-btn{border:0;background:var(--blue);border-radius:999px;padding:.35rem .9rem}
+nav{position:fixed;inset:0;z-index:50;background:color-mix(in srgb,var(--bg) 96%,transparent);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:.3rem;opacity:0;pointer-events:none;transition:opacity .35s}
+nav.open{opacity:1;pointer-events:auto}
+nav a{font-family:var(--font-h);font-size:1.25rem;text-decoration:none;color:var(--ink);padding:.35rem 1.2rem;border-radius:999px;transition:background .2s}
+nav a:hover,nav a.on{background:var(--pink)}
+.close{position:absolute;top:calc(env(safe-area-inset-top,0px) + 1rem);right:1rem;border:0;background:var(--blue);border-radius:50%;width:2.4rem;height:2.4rem}
+main{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:1rem 1.2rem 4rem}
+.page{display:none}
+.page.show{display:block;animation:enter .6s ease both}
+@keyframes enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.lead{text-align:center;color:var(--soft);margin-bottom:1.4rem}
+.btn{display:inline-block;border:0;text-decoration:none;background:var(--rose);color:#fff;font-family:var(--font-h);font-weight:600;
+  padding:.8rem 1.8rem;border-radius:999px;box-shadow:var(--shadow);transition:transform .25s}
+.btn:hover{transform:translateY(-3px) scale(1.03)} .btn:disabled{opacity:.5;cursor:default;transform:none}
+.card{background:var(--card);border-radius:22px;box-shadow:var(--shadow);padding:1.2rem}
+.center{text-align:center}
+
+/* cake */
+.cake{position:relative;width:200px;height:170px;margin:1.2rem auto .6rem}
+.cake .l{position:absolute;left:0;right:0;border-radius:14px 14px 10px 10px}
+.cake .l1{bottom:0;height:70px;background:var(--pink)}
+.cake .l2{bottom:70px;left:25px;right:25px;height:55px;background:var(--cream)}
+.cake .l1::before,.cake .l2::before{content:"";position:absolute;top:0;left:0;right:0;height:16px;border-radius:14px 14px 40% 40%;background:#fff;opacity:.85}
+.candles{position:absolute;left:0;right:0;bottom:122px;display:flex;justify-content:center;gap:22px}
+.candle{position:relative;width:10px;height:40px;border:0;padding:0;background:var(--blue);border-radius:4px;outline-offset:6px}
+.candle::before{content:"";position:absolute;left:50%;top:-24px;width:14px;height:22px;margin-left:-7px;border-radius:50% 50% 50% 50%/65% 65% 35% 35%;
+  background:radial-gradient(#fff6c9,#ffc65c 70%);box-shadow:0 0 14px #ffd98a;transform-origin:bottom;animation:flick .6s ease-in-out infinite alternate;transition:opacity .4s}
+.candle.out::before{opacity:0;animation:none}
+.candle.out::after{content:"";position:absolute;left:50%;top:-34px;width:4px;height:20px;border-radius:4px;background:#c9c0c4;opacity:0;animation:smoke 1.6s ease-out}
+@keyframes flick{from{transform:scale(1) rotate(-3deg)}to{transform:scale(1.08,.94) rotate(3deg)}}
+@keyframes smoke{20%{opacity:.6}to{opacity:0;transform:translateY(-22px)}}
+.cake.small{transform:scale(.8)}
+
+/* wishes / letter text */
+.paper{background:#fffdf7;color:#5b3d47;border-radius:12px;box-shadow:var(--shadow);padding:1.4rem;font-family:var(--font-h);line-height:2}
+.paper+.paper{margin-top:1rem}
+
+/* envelope with ribbon */
+.env{position:relative;width:min(100%,340px);height:230px;margin:1.6rem auto 0;cursor:pointer;border:0;background:none;display:block}
+.env .back{position:absolute;inset:0;background:var(--blue);border-radius:10px;box-shadow:var(--shadow)}
+.env .flap{position:absolute;left:0;right:0;top:0;height:55%;background:#b9d9ee;clip-path:polygon(0 0,100% 0,50% 100%);
+  transform-origin:top;transition:transform .7s,z-index 0s .35s;z-index:3}
+.env .front{position:absolute;inset:0;z-index:2;border-radius:10px;
+  background:linear-gradient(to top right,#dcecf8 50%,transparent 50%) left/50% 100% no-repeat,linear-gradient(to top left,#dcecf8 50%,transparent 50%) right/50% 100% no-repeat}
+.env .rib-v,.env .rib-h{position:absolute;background:var(--rose);z-index:4;transition:opacity .5s .1s}
+.env .rib-v{left:calc(50% - 11px);top:0;bottom:0;width:22px}
+.env .rib-h{top:calc(55% - 11px);left:0;right:0;height:22px}
+.env .bow{position:absolute;left:50%;top:calc(55% - 18px);transform:translateX(-50%);z-index:5;font-size:2.2rem;transition:opacity .4s}
+.env.open .flap{transform:rotateX(180deg);z-index:1}
+.env.open .rib-v,.env.open .rib-h,.env.open .bow{opacity:0}
+.hid{display:none}.hid.show{display:block;animation:enter .9s both}
+
+.lock{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}
+.lock input{flex:1 1 180px;max-width:260px;font:inherit;padding:.7rem 1rem;border:2px solid var(--pink);border-radius:999px;background:var(--card);color:var(--ink);text-align:center}
+.err{color:var(--rose-d);text-align:center;min-height:1.7rem;margin:.5rem 0 0}
+.shake{animation:shake .4s}
+@keyframes shake{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.env.locked{opacity:.55;filter:grayscale(.3)}
+.bouquet{width:min(100%,240px);margin:1.6rem auto 0}
+.bouquet svg{width:100%;height:auto;display:block}
+.sway{transform-origin:120px 238px;animation:sway 4s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-1.5deg)}to{transform:rotate(1.5deg)}}
+#fall{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:70}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="fall" aria-hidden="true"></canvas>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<header>
+  <a class="brand" href="#home">🎂 Happy Birthday</a>
+  <button class="menu-btn" id="menuBtn" aria-label="เปิดเมนู">เมนู ☰</button>
+</header>
+<nav id="nav" aria-label="เมนูหลัก">
+  <button class="close" id="closeBtn" aria-label="ปิดเมนู">✕</button>
+  <a href="#home">🏡 หน้าแรก</a><a href="#wishes">🎀 คำอวยพรจากใจ</a>
+  <a href="#letter">💌 จดหมายลับวันเกิด</a>
+</nav>
+
+<main>
+<!-- 1 HOME -->
+<section class="page center" id="home">
+  <div style="padding-top:1.5rem">
+    <h1>A Birthday Gift<br>Made Just For You 🎂</h1>
+    <p class="lead" style="margin-bottom:0">แตะที่เปลวเทียนเพื่อเป่า แล้วอธิษฐานนะ</p>
+    <div class="cake small" data-cake><div class="candles"><button class="candle" aria-label="เป่าเทียน"></button></div><div class="l l2"></div><div class="l l1"></div></div>
+    <p id="homeMsg" style="min-height:3.4rem;font-family:var(--font-h)">สุขสันต์วันเกิดนะครับ 💗<br>ขอให้ปีนี้เต็มไปด้วยเรื่องดีๆ มีความสุขมากๆนะ</p>
+    <a class="btn" href="#wishes">Open Your Birthday Gift ✨</a>
+  </div>
+</section>
+
+<!-- 2 WISHES -->
+<section class="page" id="wishes">
+  <h2>คำอวยพรวันเกิดจากใจ 🎀</h2><p class="lead">Made jut for you</p>
+  <div class="paper">
+    <p>Happy Birthday 🎂</p>
+    <p>วันนี้เป็นวันที่โลกได้เจอคนที่น่ารักที่สุดในโลกของเรา ขอบคุณที่เกิดมา ขอบคุณที่เติบโตมาเป็นเธอในแบบที่เป็นอยู่ทุกวันนี้ และขอบคุณที่เลือกเดินมาเจอกัน</p>
+    <p>ขอให้ปีนี้เป็นปีที่ใจดีกับเธอ ขอให้ยูสุขภาพแข็งแรง นอนหลับสบาย ได้ทำสิ่งที่รัก และมีรอยยิ้มแบบที่ไอชอบอยู่ทุกวัน ถ้ามีวันที่เหนื่อย อยากให้จำไว้ว่ามีคนหนึ่งยืนอยู่ตรงนี้เสมอ</p>
+    <p>ไอสัญญาว่าจะอยู่เป็นกำลังใจ เป็นเพื่อนที่คุยได้ทุกเรื่อง </p>
+    <p style="text-align:right">รักยูเสมอ</p>
+  </div>
+  <p class="center" style="margin-top:1.6rem"><a class="btn" href="#letter">ไปอ่านจดหมาย 💌</a></p>
+</section>
+
+<!-- 5 LETTER -->
+<section class="page" id="letter">
+  <h2>จดหมายวันเกิด 💌</h2><p class="lead" id="lockLead">ใส่วันเกิดของไอ ถ้าตอบถูกถึงจะเปิดจดหมายได้ 🔒</p>
+  <div class="lock" id="lock"><input id="bd" type="text" autocomplete="off" placeholder="วัน/เดือน/ปี เช่น 1/1/2550" aria-label="วันเกิดของเรา"><button class="btn" id="unlock">ปลดล็อก</button></div>
+  <p class="err" id="err" role="alert"></p>
+  <button class="env locked" id="env" aria-label="เปิดซองจดหมาย"><div class="back"></div><div class="front"></div><div class="flap"></div><div class="rib-v"></div><div class="rib-h"></div><div class="bow">🎀</div></button>
+  <div class="paper hid" id="paper" style="margin-top:1.4rem">
+    <p>ในวันเกิดของเธอ,</p>
+    <p>ไอนั่งเขียนจดหมายฉบับนี้ไปยิ้มไป เพราะนึกถึงทุกเรื่องที่เราได้คุยกันมา ตั้งแต่ครั้งแรกที่เจอ จนถึงวันที่เธอกลายเป็นบ้านหลังเล็กๆ ของใจเรา</p>
+    <p>เป็นคนที่ทำให้วันธรรมดาของเรากลายเป็นวันพิเศษ</p>
+    <p>ไออยากบอกว่า ยูไม่ต้องเก่งหรือสมบูรณ์แบบตลอดเวลา ไอชอบทั้งตอนที่ร่าเริงและตอนที่เหนื่อย ชอบทั้งเสียงหัวเราะดังๆ และความเงียบที่อยู่ด้วยกันแล้วสบายใจ</p>
+    <p>ขอให้อีกหนึ่งปีข้างหน้า เป็นปีที่เราได้สร้างความทรงจำดีๆ ด้วยกันอีกมากมาย ไอจะอยู่ตรงนี้ ไม่ว่าจะไปที่ไหน</p>
+    <p style="text-align:right">เลิฟยูมากๆ,<br>นางสาวปิยะฉัตร 🌷</p>
+  </div>
+  <div class="bouquet hid" id="bouquet">
+    <svg viewBox="0 0 240 250" role="img" aria-label="ช่อดอกไม้">
+      <defs><g id="fl"><g fill="currentColor"><ellipse cy="-13" rx="7" ry="12"/><ellipse cy="-13" rx="7" ry="12" transform="rotate(72)"/><ellipse cy="-13" rx="7" ry="12" transform="rotate(144)"/><ellipse cy="-13" rx="7" ry="12" transform="rotate(216)"/><ellipse cy="-13" rx="7" ry="12" transform="rotate(288)"/></g><circle r="6" fill="#ffd98a"/></g></defs>
+      <g class="sway">
+        <g fill="none" stroke="#8fc3a0" stroke-width="3" stroke-linecap="round"><path d="M120 200V66"/><path d="M120 200Q95 150 76 90"/><path d="M120 200Q145 150 164 90"/><path d="M120 200Q104 160 96 122"/><path d="M120 200Q136 160 146 122"/></g>
+        <g fill="#a8d5ba"><ellipse cx="100" cy="150" rx="6" ry="14" transform="rotate(-35 100 150)"/><ellipse cx="142" cy="150" rx="6" ry="14" transform="rotate(35 142 150)"/></g>
+        <use href="#fl" transform="translate(120 62) scale(1.3)" style="color:var(--rose)"/>
+        <use href="#fl" transform="translate(76 88) scale(1.1)" style="color:#f4b6c4"/>
+        <use href="#fl" transform="translate(164 88) scale(1.1)" style="color:#9cc7e4"/>
+        <use href="#fl" transform="translate(96 122)" style="color:#f6dcb8"/>
+        <use href="#fl" transform="translate(146 122)" style="color:var(--rose)"/>
+        <polygon points="62,132 178,132 130,238 110,238" fill="var(--cream)" stroke="var(--pink)" stroke-width="3" stroke-linejoin="round"/>
+        <g fill="var(--rose)"><ellipse cx="105" cy="196" rx="14" ry="8" transform="rotate(-20 105 196)"/><ellipse cx="135" cy="196" rx="14" ry="8" transform="rotate(20 135 196)"/><circle cx="120" cy="197" r="5"/></g>
+      </g>
+    </svg>
+    <p class="center" style="font-family:var(--font-h);color:var(--rose-d)">ดอกไม้สำหรับยุ 💐</p>
+  </div>
+</section>
+
+</main>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+
+/* router */
+const pages=$$('.page'),links=$$('nav a');
+function route(){const id=(location.hash||'#home').slice(1);const p=document.getElementById(id)?.classList.contains('page')?id:'home';
+  pages.forEach(x=>x.classList.toggle('show',x.id===p));links.forEach(a=>a.classList.toggle('on',a.hash==='#'+p));
+  $('#nav').classList.remove('open');window.scrollTo(0,0);}
+addEventListener('hashchange',route);
+$('#menuBtn').onclick=()=>$('#nav').classList.add('open');$('#closeBtn').onclick=()=>$('#nav').classList.remove('open');
+
+addEventListener('keydown',e=>{if(e.key==='Escape')$('#nav').classList.remove('open')});
+
+/* falling hearts + letters */
+(function(){const c=$('#fall'),x=c.getContext('2d');
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches){c.style.display='none';return}
+  const gl=['♥','♥','♥','✿','✦','L','O','V','E','U','รัก'],cols=['#f4a6b8','#e98aa0','#9cc7e4','#f6c9a0','#f9d3dc'];let ps=[];
+  const mk=top=>({x:Math.random()*innerWidth,y:top?-20:Math.random()*innerHeight,s:14+Math.random()*16,v:.4+Math.random()*.9,p:Math.random()*6,
+    a:.3+Math.random()*.35,g:gl[Math.random()*gl.length|0],c:cols[Math.random()*cols.length|0]});
+  function init(){c.width=innerWidth;c.height=innerHeight;ps=Array.from({length:Math.min(40,Math.round(innerWidth/14))},()=>mk(false))}
+  init();addEventListener('resize',init);
+  (function f(){x.clearRect(0,0,c.width,c.height);
+    ps.forEach((p,i)=>{p.y+=p.v;p.p+=.02;p.x+=Math.sin(p.p)*.6;x.globalAlpha=p.a;x.fillStyle=p.c;x.font=p.s+'px Mali,sans-serif';x.fillText(p.g,p.x,p.y);
+      if(p.y>c.height+20)ps[i]=mk(true)});
+    x.globalAlpha=1;requestAnimationFrame(f)})()})();
+
+/* confetti */
+const cv=$('#confetti'),cx=cv.getContext('2d');let bits=[],raf=0;
+function size(){cv.width=innerWidth;cv.height=innerHeight}size();addEventListener('resize',size);
+function confetti(){const cols=['#fbd3dc','#e98aa0','#cfe6f5','#fdeedb','#ffd98a'];
+  bits=Array.from({length:140},()=>({x:innerWidth/2,y:innerHeight*.55,vx:(Math.random()-.5)*14,vy:-Math.random()*14-4,r:Math.random()*6+3,c:cols[Math.random()*5|0],a:Math.random()*6}));
+  cancelAnimationFrame(raf);(function f(){cx.clearRect(0,0,cv.width,cv.height);
+    bits.forEach(b=>{b.x+=b.vx;b.y+=b.vy;b.vy+=.25;b.vx*=.99;b.a+=.15;cx.fillStyle=b.c;cx.save();cx.translate(b.x,b.y);cx.rotate(b.a);cx.fillRect(-b.r,-b.r/2,b.r*2,b.r);cx.restore()});
+    bits=bits.filter(b=>b.y<cv.height+20);if(bits.length)raf=requestAnimationFrame(f);else cx.clearRect(0,0,cv.width,cv.height)})()}
+
+/* home cake: tap flame */
+$('[data-cake] .candle').onclick=e=>{const c=e.currentTarget;if(c.classList.contains('out'))return;c.classList.add('out');
+  $('#homeMsg').innerHTML='ขอให้คำอธิษฐานเป็นจริงนะ ✨<br>สุขสันต์วันเกิด!';confetti()};
+
+/* letter */
+let unlocked=false;
+function okDate(v){const m=v.trim().toLowerCase().match(/^(\d{1,2})\s*[\/\-. ]?\s*(\d{1,2}|สิงหาคม|ส\.?ค\.?|aug(?:ust)?)\s*[\/\-. ]?\s*(\d{4})$/);
+  if(!m)return false;const mo=!/^\d+$/.test(m[2])||+m[2]===8;return +m[1]===11&&mo&&(+m[3]===2551||+m[3]===2008)}
+function tryUnlock(){const lk=$('#lock');
+  if(okDate($('#bd').value)){unlocked=true;lk.style.display='none';$('#err').textContent='';
+    $('#lockLead').textContent='ปลดล็อกแล้ว 🔓 แตะซองเพื่อเปิดอ่านได้เลย';$('#env').classList.remove('locked');confetti()}
+  else{$('#err').textContent='ยังไม่ถูกนะ ลองใหม่อีกครั้ง 💗';lk.classList.remove('shake');void lk.offsetWidth;lk.classList.add('shake')}}
+$('#unlock').onclick=tryUnlock;$('#bd').addEventListener('keydown',e=>{if(e.key==='Enter')tryUnlock()});
+$('#env').onclick=()=>{if(!unlocked){$('#err').textContent='ใส่วันเกิดของเราให้ถูกก่อน ถึงจะเปิดจดหมายได้นะ 🔒';return}
+  const o=$('#env').classList.toggle('open');setTimeout(()=>{$('#paper').classList.toggle('show',o);$('#bouquet').classList.toggle('show',o)},o?500:0)};
+
+route();
+</script>
+</body>
+</html>
